@@ -1,0 +1,38 @@
+services:
+  wordpress:
+    build:
+      context: ./
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: Admin
+      WORDPRESS_DB_PASSWORD: 
+      WORDPRESS_DB_NAME: logomaker_wp
+    extra_hosts:
+      - "${host.docker.internal}:host-gateway"
+    volumes:
+      - ./html:/var/www/html
+      # - ~/.ssh:/root/.ssh:ro
+
+  db:
+    image: mysql:9.2
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: logomaker_wp
+      MYSQL_USER: Admin
+      MYSQL_PASSWORD: 
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: Admin
+      PMA_PASSWORD: 
+
+volumes:
+  db_data:

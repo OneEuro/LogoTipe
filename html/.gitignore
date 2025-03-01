@@ -35,7 +35,8 @@ wp-config.php
 # htaccess
 /.htaccess
 
-.idea
+.idea/
+.DS_Store
 
 # All plugins
 #
