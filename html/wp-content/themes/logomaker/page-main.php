@@ -1,62 +1,178 @@
 <?php
 get_header();?>
 
-    <section class="content">
-        <?php
-        $categories = get_categories();
-        usort($categories, function($a, $b) {
-            $order_a = get_field('custom_order', 'category_' . $a->term_id);
-            $order_b = get_field('custom_order', 'category_' . $b->term_id);
-            return $order_a - $order_b;
-        });
-        if (!empty($categories)) {
-        foreach ($categories as $category) {
-        $image_url = get_term_meta($category->term_id, 'category-image', true);
-        ?>
-        <div id="category-<?php echo esc_html($category->term_id); ?>" class="menu-section">
-            <div class="menu-section__title rounded"><?php echo esc_html($category->name); ?> </div>
-            <div class="menu-section__img">
-                <img src="<?php echo $image_url; ?>" alt="">
-            </div>
-            <div class="menu-section__listbox menu-section__listbox_margin-top">
-                <?php
-                $query = new WP_Query(array(
-                    'post_type'      => 'post',
-                    'posts_per_page' => -1,
-                    'cat'            => $category->term_id,
-                ));
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
-                        <div id="post-<?php the_ID(); ?>" class="listbox__card">
-                            <div class="card__img"><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt=""></div>
-                            <div class="card-description">
-                                <div class="card-description__inner">
-                                    <div class="card-description__title"><?php the_title(); ?></div>
-                                    <div class="card-description__text font-gray-s"><?php echo get_field('meal_description'); ?></div>
-                                    <div class="card-description__weight"><?php echo get_field('weight');?> г</div>
-                                </div>
-                                <div class="card-description__order">
-                                    <div class="card-description__price"><?php echo get_field('price');?><span class="price-symbol">&#8381;</span></div>
-                                    <button data-id="<?php the_ID();?>" class="card-description__button add-to-cart rounded rounded_font-small">в корзину</button>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    echo '<p>Нет постов в этой рубрике.</p>';
-                }
-                wp_reset_postdata(); ?>
-            </div>
-            <?php }
-            } else {
-                echo '<p>Рубрики не найдены.</p>';
-            } ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogoPipe - Create a professional logo in minutes</title>
+</head>
+<body>
+<!-- Navigation -->
+<div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="LogoPipe">
+            <span>LogoPipe</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Use Cases</a></li>
+            <li><a href="#">Reviews</a></li>
+        </ul>
+        <div class="download-btn">
+            <a href="#">Download</a>
+            <span class="download-icon">↓</span>
+        </div>
+    </nav>
+</div>
 
+<!-- Hero Section -->
+<div class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Create a professional logo in minutes with LogoPipe</h1>
+            <p>No design skills needed. Just choose a style, and AI will do the rest.</p>
+            <a href="#" class="btn">Download for Free</a>
+        </div>
+        <div class="hero-image">
+            <div class="blob1"></div>
+            <div class="blob2"></div>
+            <!-- Hero image would go here -->
         </div>
     </section>
-    </body>
+</div>
 
-<?php get_footer(); ?>
+<!-- Features Section -->
+<div class="container">
+    <section class="features">
+        <h2>Everything you need to easily create a logo in one App</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <div class="feature-content">
+                    <h3>Fast & Easy</h3>
+                    <p>Create a logo in 3 simple steps</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <div class="feature-content">
+                    <h3>Professional Quality</h3>
+                    <p>Unique designs powered by AI</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <div class="feature-content">
+                    <h3>Accessible</h3>
+                    <p>No design experience required</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <div class="feature-content">
+                    <h3>Time-Saving</h3>
+                    <p>Minutes instead of hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- How It Works Section -->
+<div class="container">
+    <section class="how-it-works">
+        <h2>How to Create a Logo in 3 Steps</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Choose a Style</h3>
+                <p>Select your preferences (minimalist, classic, modern, etc.)</p>
+                <div class="step-img"></div>
+            </div>
+            <span class="step-connector"></span>
+            <div class="step">
+                <h3>Customize Details</h3>
+                <p>Add your company name, slogan, and choose colors</p>
+                <div class="step-img"></div>
+            </div>
+            <span class="step-connector"></span>
+            <div class="step">
+                <h3>Get Results</h3>
+                <p>AI generates multiple logo options</p>
+                <div class="step-img"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Target Audience Section -->
+<div class="container">
+    <section class="target-audience">
+        <h2>Who is LogoPipe for?</h2>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon"></div>
+                <p>Entrepreneurs and startups</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"></div>
+                <p>Content creators and freelancers</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"></div>
+                <p>Small business owners</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"></div>
+                <p>Anyone who needs a logo on a budget</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Testimonials Section -->
+<div class="container">
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial">
+                <!-- Testimonial content would go here -->
+                <div class="testimonial-toggle">+</div>
+            </div>
+            <div class="testimonial">
+                <!-- Testimonial content would go here -->
+                <div class="testimonial-toggle">+</div>
+            </div>
+            <div class="testimonial">
+                <!-- Testimonial content would go here -->
+                <div class="testimonial-toggle">+</div>
+            </div>
+            <div class="testimonial">
+                <!-- Testimonial content would go here -->
+                <div class="testimonial-toggle">+</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CTA Section -->
+<div class="container">
+    <section class="cta">
+        <h2>Create Your Unique Logo Today!</h2>
+        <p>Try it for Free</p>
+        <a href="#" class="cta-btn">Google play</a>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>© LogoPipe, 2023 <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
+</body>
+</html>
