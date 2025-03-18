@@ -338,13 +338,6 @@ $assets_path = $theme_path . '/assets'; ?>
     </div>
 </footer>
 
-<!--<script src="script.js"></script>-->
-<!--<script>-->
-<!--    var firstRow = document.getElementById('first-row');-->
-<!--    var secondRow = document.getElementById('second-row');-->
-<!--    var autoFillTicker = new tickerBar(firstRow, { autoFill: true, direction: 'right' });-->
-<!--    var autoFillTicker = new tickerBar(secondRow, { pxPerSec: 10 });-->
-<!--</script>-->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
