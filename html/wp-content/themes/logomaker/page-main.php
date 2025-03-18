@@ -12,7 +12,7 @@ $assets_path = $theme_path . '/assets'; ?>
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#">About</a></li>
+                <li><a href="#hero">About</a></li>
                 <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#use-cases">Use Cases</a></li>
@@ -20,7 +20,7 @@ $assets_path = $theme_path . '/assets'; ?>
             </ul>
         </nav>
         <div class="download-button desktop">
-            <a href="#" class="btn-download">
+            <a href="https://play.google.com/store/apps" class="btn-download">
                 <span>Download</span>
                 <img src="<?php echo $assets_path; ?>/img/download-icon.svg" alt="download-icon">
             </a>
@@ -33,7 +33,7 @@ $assets_path = $theme_path . '/assets'; ?>
 
 <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="container container-hero">
             <div class="demo-badge">Demo version is out!</div>
             <div class="hero-content">
@@ -60,7 +60,7 @@ $assets_path = $theme_path . '/assets'; ?>
                             <span>Result in 5min</span>
                         </div>
                     </div>
-                    <a href="#" class="btn-primary download-play">Download on Google Play<img src="<?php echo $assets_path; ?>/img/google-play.svg" alt="google-play"></a>
+                    <a href="https://play.google.com/store/apps" class="btn-primary download-play">Download on Google Play<img src="<?php echo $assets_path; ?>/img/google-play.svg" alt="google-play"></a>
                 </div>
                 <div class="hero-image">
                     <img src="<?php echo $assets_path; ?>/img/hero-phone.png" alt="LogoTipe App on phone">
@@ -78,7 +78,7 @@ $assets_path = $theme_path . '/assets'; ?>
                             <div class="blue-circle"></div>Benefits
                         </span>
                 </div>
-                <h2 class="gradient-text onest-title">Everything you need to easily create a logo in one App</h2>
+                <h2 class="gradient-text onest-title">Everything you need to easily create a logo with AI</h2>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -317,8 +317,8 @@ $assets_path = $theme_path . '/assets'; ?>
         <div class="container">
             <div class="cta-content">
                 <div class="cta-text">
-                    <h2 class="onest-title">Create Your Unique Logo Today!</h2>
-                    <a href="#" class="btn-primary download-play">Download on Google Play
+                    <h2 class="onest-title">Create Your Unique Logo with AI</h2>
+                    <a href="https://play.google.com/store/apps" class="btn-primary download-play">Download on Google Play
                         <img src="<?php echo $assets_path; ?>/img/google-play-blue.svg" alt="google-play">
                     </a>
                     <div class="demo">Demo version is out!</div>
@@ -352,12 +352,12 @@ $assets_path = $theme_path . '/assets'; ?>
             // Create mobile menu
             const mobileMenu = document.createElement('ul');
             const menuItems = [
-                {text: 'About', href: '#'},
+                {text: 'About', href: '#hero'},
                 {text: 'Benefits', href: '#benefits'},
                 {text: 'How It Works', href: '#how-it-works'},
                 {text: 'Use Cases', href: '#use-cases'},
                 {text: 'Reviews', href: '#reviews'},
-                {text: 'Download', href: '#', class: 'mobile-download'}
+                {text: 'Download', href: 'https://play.google.com/store/apps', class: 'mobile-download'}
             ];
 
             menuItems.forEach(item => {
@@ -496,7 +496,6 @@ $assets_path = $theme_path . '/assets'; ?>
         }
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         new Glide('.glide', {

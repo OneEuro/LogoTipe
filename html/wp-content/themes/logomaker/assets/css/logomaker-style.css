@@ -990,6 +990,10 @@ footer a {
         font-size: 12px;
     }
 
+    .benefits .section-header h2 {
+        margin: 0 6%;
+    }
+
     .avatar {
         width: 45px;
         height: 45px;
@@ -1000,8 +1004,16 @@ footer a {
         margin: 0 5px;
     }
 
+    .use-cases .section-header h2 {
+        margin: 0 15%;
+    }
+
     .use-case p {
         font-size: 12px;
+    }
+
+    .cta {
+        padding: 40px 40px 0 40px;
     }
 
     .cta h2 {
