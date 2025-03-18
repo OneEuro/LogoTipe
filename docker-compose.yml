@@ -4,6 +4,7 @@ services:
       context: ./
     ports:
       - "8080:80"
+      - "0.0.0.0:8080:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: Admin

@@ -142,6 +142,11 @@ function logomaker_scripts() {
 	wp_style_add_data( 'logomaker-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'logomaker-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_deregister_script( 'jquery' );
+    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
+    wp_enqueue_script( 'tickerBar', get_template_directory_uri() . '/js/tickerBar.min.js', array('jquery'), _S_VERSION );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('tickerBar') );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
