@@ -153,6 +153,7 @@ function logomaker_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'logomaker_scripts' );
+add_filter('show_admin_bar', '__return_false');
 
 /**
  * Implement the Custom Header feature.

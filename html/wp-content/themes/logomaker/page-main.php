@@ -34,7 +34,7 @@ $assets_path = $theme_path . '/assets'; ?>
 <main>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container container-hero">
             <div class="demo-badge">Demo version is out!</div>
             <div class="hero-content">
                 <div class="hero-text-logo">
@@ -150,7 +150,7 @@ $assets_path = $theme_path . '/assets'; ?>
                         <div class="gradient-number">3</div>
                     </div>
                     <h3>Get Results</h3>
-                    <p>AI generates multiple logo options</p>
+                    <p class="step-card_text">AI generates multiple logo options</p>
                     <div class="step-image">
                         <img src="<?php echo $assets_path; ?>/img/step3-image.png" alt="Get Results">
                     </div>

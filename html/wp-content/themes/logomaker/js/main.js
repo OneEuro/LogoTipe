@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var firstRow = document.getElementById('first-row');
     var secondRow = document.getElementById('second-row');
-    var autoFillTicker = new tickerBar(firstRow, { autoFill: true, direction: 'right' });
-    var autoFillTicker = new tickerBar(secondRow, { pxPerSec: 10 });
+    var autoFillTicker = new tickerBar(firstRow, { autoFill: true, direction: 'right', pxPerSec: 10 });
+    var autoFillTicker = new tickerBar(secondRow, { autoFill: true, pxPerSec: 10 });
 });
