@@ -6,10 +6,10 @@ services:
       - "8080:80"
       - "0.0.0.0:8080:80"
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: Admin
-      WORDPRESS_DB_PASSWORD: 
-      WORDPRESS_DB_NAME: logomaker_wp
+      - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST}
+      - WORDPRESS_DB_USER=${WORDPRESS_DB_USER}
+      - WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME}
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
