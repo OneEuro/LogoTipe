@@ -78,7 +78,7 @@ $assets_path = $theme_path . '/assets'; ?>
                             <div class="blue-circle"></div>Benefits
                         </span>
                 </div>
-                <h2 class="gradient-text onest-title">Everything you need to easily create a logo with AI</h2>
+                <h2 class="gradient-text onest-title">Everything you need<wbr> to&nbsp;easily create a logo with&nbsp;AI</h2>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
