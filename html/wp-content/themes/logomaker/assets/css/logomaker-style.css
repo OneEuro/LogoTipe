@@ -883,6 +883,14 @@ footer a {
         justify-content: center;
     }
 
+    .how-it-works, .reviews {
+        width: auto;
+    }
+
+    .how-it-works_background, .reviews {
+      border-radius: unset;
+    }
+
     .cta-content {
         flex-direction: column;
         text-align: center;
